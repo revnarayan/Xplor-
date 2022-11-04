@@ -34,14 +34,8 @@ class AnniversaryRecordViewModel() : ViewModel() {
                 val currentYearAnniversary =
                     anniversaryDateThisYear.timeInMillis - currentDay.timeInMillis
                 if (currentYearAnniversary >= 0 && currentYearAnniversary < Constants.TWO_WEEKS) {
-                    if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(
-                            Calendar.YEAR
-                        )) % 5 == 0
-                    ) {
-                        if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(
-                                Calendar.YEAR
-                            )) % 10 == 0
-                        ) {
+                    if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 5 == 0) {
+                        if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 10 == 0) {
                             upcomingAnniversaries.add(
                                 RecordUIModel(
                                     record.coupleId,
@@ -89,10 +83,6 @@ class AnniversaryRecordViewModel() : ViewModel() {
             getAnniversaryEventRecord(it)
         }
         return upcomingAnniversaries
-    }
-
-    fun updateBackgroundColor(): Int {
-        return R.color.silver
     }
 
 }

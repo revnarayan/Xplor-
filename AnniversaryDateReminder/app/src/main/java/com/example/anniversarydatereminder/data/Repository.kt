@@ -6,7 +6,7 @@ import com.example.anniversarydatereminder.data.model.Record
 class Repository {
     fun populateData(): List<Record> {
         return listOf(
-            Record("1", "2012-11-10"),
+            Record("1", "2013-01-10"),
             Record("2", "2014-11-08"),
             Record("3", "2013-11-11"),
             Record("4", "2018-11-12"),
@@ -22,7 +22,10 @@ class Repository {
             Record("14", "2015-04-07"),
             Record("15", null),
             Record("16", null),
-            Record("17", null)
+            Record("17", null),
+            Record("18", "2013-01-05"),
+            Record("19", "2017-01-04"),
+            Record("20", "2012-11-10")
         )
 
     }

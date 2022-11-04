@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anniversarydatereminder.R
 import com.example.anniversarydatereminder.data.model.Record
+import com.example.anniversarydatereminder.data.model.RecordUIModel
 import com.example.anniversarydatereminder.recyclerAdaper.AnniversaryDateAdapter
 
 
@@ -25,14 +26,14 @@ class AnniversaryDateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setAnniversaryDateAdapter(anniversaryRecordViewModel.getUpdatedAnniversaryRecord(),view)
+        setAnniversaryDateAdapter(anniversaryRecordViewModel.getUpdatedAnniversaryRecord())
     }
 
-    private fun setAnniversaryDateAdapter(dateList: List<Record>,view: View) {
-        view.findViewById<RecyclerView>(R.id.rvMain).apply {
+    private fun setAnniversaryDateAdapter(dateList: List<RecordUIModel>) {
+        requireView().findViewById<RecyclerView>(R.id.rvMain).apply {
             setHasFixedSize(true)
             adapter = AnniversaryDateAdapter(dateList)
-            layoutManager = LinearLayoutManager(view.context)
+            layoutManager = LinearLayoutManager(view?.context)
 
         }
     }

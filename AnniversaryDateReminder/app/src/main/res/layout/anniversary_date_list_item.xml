@@ -2,26 +2,36 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/cl_list_item_layout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:padding="5dp">
-    <TextView
-        android:id="@+id/tvId"
-        android:text="Id"
-        android:layout_width="wrap_content"
+    <data>
+        <variable
+            name="anniversaryDateRecordList"
+            type="com.example.anniversarydatereminder.data.model.RecordUIModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_list_item_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/tvDate"
-        android:text="Date"
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvId" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_margin="5dp"
+        app:customBackground="@{anniversaryDateRecordList.color}"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/tvId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/coupleID,anniversaryDateRecordList.coupleId)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{String.format(@string/anniversaryDate,anniversaryDateRecordList.anniversaryDate)}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvId" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

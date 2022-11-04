@@ -1,14 +1,8 @@
 package com.example.anniversarydatereminder.data.model
 
 
-data class Record (
+data class Record(
     val coupleId: String,
-    val anniversaryDate: String?,
-    val type:AnniversaryType = AnniversaryType.NO_TYPE
+    val anniversaryDate: String?
     )
 
-enum class AnniversaryType {
-    FIVE_YEAR,
-    TEN_YEAR,
-    NO_TYPE
-}

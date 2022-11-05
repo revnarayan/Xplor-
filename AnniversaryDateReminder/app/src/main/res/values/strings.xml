@@ -2,5 +2,5 @@
     <string name="app_name">AnniversaryDateReminder</string>
     <string name="coupleID">Couple ID: %s</string>
     <string name="anniversaryDate">Anniversary Date: %s</string>
-
+    <string name="welcome_message">Welcome, I\'m here to show you the upcoming anniversary date record in the next 14 days!!</string>
 </resources>

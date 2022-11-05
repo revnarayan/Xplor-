@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.anniversarydatereminder.R
-import com.example.anniversarydatereminder.data.model.Record
 import com.example.anniversarydatereminder.data.model.RecordUIModel
 import com.example.anniversarydatereminder.recyclerAdaper.AnniversaryDateAdapter
 

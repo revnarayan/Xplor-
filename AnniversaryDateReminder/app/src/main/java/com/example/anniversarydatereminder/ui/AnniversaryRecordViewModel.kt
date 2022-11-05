@@ -33,47 +33,62 @@ class AnniversaryRecordViewModel() : ViewModel() {
 
                 val currentYearAnniversary =
                     anniversaryDateThisYear.timeInMillis - currentDay.timeInMillis
-                if (currentYearAnniversary >= 0 && currentYearAnniversary < Constants.TWO_WEEKS) {
-                    if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 5 == 0) {
-                        if ((anniversaryDateThisYear.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 10 == 0) {
-                            upcomingAnniversaries.add(
-                                RecordUIModel(
-                                    record.coupleId,
-                                    simpleDateFormat.format(anniversaryDateThisYear.time),
-                                    R.color.gold
-                                )
-                            )
-                        } else {
-                            upcomingAnniversaries.add(
-                                RecordUIModel(
-                                    record.coupleId,
-                                    simpleDateFormat.format(anniversaryDateThisYear.time),
-                                    R.color.silver
-                                )
-                            )
-                        }
-                    } else {
-                        upcomingAnniversaries.add(
-                            RecordUIModel(
-                                record.coupleId,
-                                simpleDateFormat.format(anniversaryDateThisYear.time),
-                                R.color.black
-                            )
-                        )
-                    }
-                }
+                getAnniversaryDateList(
+                    currentYearAnniversary,
+                    anniversaryDateThisYear,
+                    recordAnniversaryDate,
+                    record,
+                    simpleDateFormat
+                )
                 val futureYearAnniversary =
                     anniversaryDateNextYear.timeInMillis - currentDay.timeInMillis
-                if (futureYearAnniversary >= 0 && futureYearAnniversary < Constants.TWO_WEEKS) {
+                getAnniversaryDateList(
+                    futureYearAnniversary,
+                    anniversaryDateNextYear,
+                    recordAnniversaryDate,
+                    record,
+                    simpleDateFormat
+                )
+            }
+        }
+    }
+
+    private fun getAnniversaryDateList(
+        anniversaryYear: Long,
+        anniversaryDate: Calendar,
+        recordAnniversaryDate: Calendar,
+        record: Record,
+        simpleDateFormat: SimpleDateFormat
+    ) {
+        if (anniversaryYear >= 0 && anniversaryYear < Constants.TWO_WEEKS) {
+            if ((anniversaryDate.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 5 == 0) {
+                if ((anniversaryDate.get(Calendar.YEAR) - recordAnniversaryDate.get(Calendar.YEAR)) % 10 == 0) {
                     upcomingAnniversaries.add(
                         RecordUIModel(
                             record.coupleId,
-                            simpleDateFormat.format(anniversaryDateNextYear.time),
-                            R.color.black
+                            simpleDateFormat.format(anniversaryDate.time),
+                            R.color.gold
+                        )
+                    )
+                } else {
+                    upcomingAnniversaries.add(
+                        RecordUIModel(
+                            record.coupleId,
+                            simpleDateFormat.format(anniversaryDate.time),
+                            R.color.silver
                         )
                     )
                 }
+            } else {
+                upcomingAnniversaries.add(
+                    RecordUIModel(
+                        record.coupleId,
+                        simpleDateFormat.format(anniversaryDate.time),
+                        R.color.neutral
+                    )
+                )
             }
+
         }
     }
 

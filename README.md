@@ -1,5 +1,5 @@
 
-This is a sample anniversary reminders for couples app that uses hardcoded Input Data, which will show the couple ID and their anniversary date. 
+This Android app is a reminder app for couples whose anniversary dates falls in the next 14 days
 
 **Built With**
 
@@ -24,5 +24,5 @@ This is a sample anniversary reminders for couples app that uses hardcoded Input
 
 **Additional Notes**
 
-1.	Unit tests have been written for the following for Repository
+1.	Unit tests have been written for Repository
 2. Espresso tests have been written for fragment

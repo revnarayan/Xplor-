@@ -1,35 +1,44 @@
-package com.example.anniversarydatereminder.repository
-
+package com.example.anniversarydatereminder.viewModel
 
 import com.example.anniversarydatereminder.data.AnniversaryDateRecordRepository
 import com.example.anniversarydatereminder.data.model.Record
+import com.example.anniversarydatereminder.data.model.RecordUIModel
+import com.example.anniversarydatereminder.ui.AnniversaryRecordViewModel
 import io.mockk.every
 import io.mockk.mockk
-import junit.framework.Assert.assertEquals
 import org.junit.Assert
 import org.junit.Before
+
+import org.junit.Assert.*
 import org.junit.Test
 
-
-class AnniversaryDateRepositoryTest {
+class AnniversaryRecordViewModelTest {
 
     private val anniversaryDateRecordRepositoryMock = mockk<AnniversaryDateRecordRepository>()
+    private val viewModel = AnniversaryRecordViewModel()
+
 
     @Before
-    fun setup() {
+    fun setUp() {
         every { anniversaryDateRecordRepositoryMock.populateData() } returns records
     }
 
     @Test
-    fun givenAnniversaryDateRepository_whenPopulateData_thenReturnListOfAnniversaryDateRecord() {
-        assertEquals(anniversaryDateRecordRepositoryMock.populateData(), records)
-    }
-
-
-    @Test
-    fun givenAnniversaryDateRepository_whenPopulateData_thenResultIsNotNull() {
-        val anniversaryDatesList = anniversaryDateRecordRepositoryMock.populateData()
-        Assert.assertNotNull(anniversaryDatesList)
+    fun givenARecord_whenGetAnniversaryEventRecord_thenReturnsSortedListOfRecords() {
+        val silverColor = 2131034713
+        val neutralColor = 2131034693
+        val goldColor= 2131034204
+        val expectedResult = arrayListOf(
+            RecordUIModel("2", "2022-11-08",neutralColor),
+            RecordUIModel("3", "2022-11-11",neutralColor),
+            RecordUIModel("4", "2022-11-12",neutralColor),
+            RecordUIModel("7", "2022-11-07",neutralColor),
+            RecordUIModel("10","2022-11-13",silverColor),
+            RecordUIModel("11","2022-11-14",silverColor),
+            RecordUIModel("12","2022-11-06",neutralColor),
+            RecordUIModel("20","2022-11-10",goldColor),
+        )
+        assertEquals(viewModel.getUpdatedAnniversaryRecord(), expectedResult)
     }
 
     private val records: ArrayList<Record> = arrayListOf(

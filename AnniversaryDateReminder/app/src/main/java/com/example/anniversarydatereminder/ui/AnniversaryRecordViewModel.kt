@@ -13,6 +13,7 @@ import java.util.*
 class AnniversaryRecordViewModel() : ViewModel() {
     private val anniversaryDateRecordRepository = AnniversaryDateRecordRepository()
     private val upcomingAnniversaries: ArrayList<RecordUIModel> = arrayListOf()
+
     private fun getAnniversaryEventRecord(record: Record) {
         val format = "yyyy-MM-dd"
         val simpleDateFormat = SimpleDateFormat(format, Locale.getDefault())
@@ -40,6 +41,7 @@ class AnniversaryRecordViewModel() : ViewModel() {
                     record,
                     simpleDateFormat
                 )
+
                 val futureYearAnniversary =
                     anniversaryDateNextYear.timeInMillis - currentDay.timeInMillis
                 getAnniversaryDateList(

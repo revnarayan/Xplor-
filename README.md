@@ -6,6 +6,7 @@ This is a sample anniversary reminders for couples app that uses hardcoded Input
 •	Kotlin
 •	Data Binding
 •	ViewModel
+•	Espresso
 •	Mockito and Junit Framework for Unit Test
 
 
@@ -23,4 +24,5 @@ This is a sample anniversary reminders for couples app that uses hardcoded Input
 
 **Additional Notes**
 
-1.	Unit tests have been written for the following for Repository and ViewModel
+1.	Unit tests have been written for the following for Repository
+2. Espresso tests have been written for fragment

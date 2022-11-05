@@ -24,5 +24,5 @@ This Android app is a reminder app for couples whose anniversary dates falls in 
 
 **Additional Notes**
 
-1.	Unit tests have been written for Repository
+1.	Unit tests have been written for the following for Repository and ViewModel
 2. Espresso tests have been written for fragment

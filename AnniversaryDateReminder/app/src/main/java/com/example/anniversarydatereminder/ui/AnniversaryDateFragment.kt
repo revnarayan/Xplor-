@@ -29,7 +29,7 @@ class AnniversaryDateFragment : Fragment() {
     }
 
     private fun setAnniversaryDateAdapter(dateList: List<RecordUIModel>) {
-        requireView().findViewById<RecyclerView>(R.id.rvMain).apply {
+        requireView().findViewById<RecyclerView>(R.id.recycler_view).apply {
             setHasFixedSize(true)
             adapter = AnniversaryDateAdapter(dateList)
             layoutManager = LinearLayoutManager(view?.context)

@@ -3,7 +3,7 @@ package com.example.anniversarydatereminder.ui
 import androidx.lifecycle.ViewModel
 import com.example.anniversarydatereminder.R
 import com.example.anniversarydatereminder.common.Constants
-import com.example.anniversarydatereminder.data.Repository
+import com.example.anniversarydatereminder.data.AnniversaryDateRecordRepository
 import com.example.anniversarydatereminder.data.model.Record
 import com.example.anniversarydatereminder.data.model.RecordUIModel
 import java.text.SimpleDateFormat
@@ -11,7 +11,7 @@ import java.util.*
 
 
 class AnniversaryRecordViewModel() : ViewModel() {
-    private val repository = Repository()
+    private val anniversaryDateRecordRepository = AnniversaryDateRecordRepository()
     private val upcomingAnniversaries: ArrayList<RecordUIModel> = arrayListOf()
     private fun getAnniversaryEventRecord(record: Record) {
         val format = "yyyy-MM-dd"
@@ -93,7 +93,7 @@ class AnniversaryRecordViewModel() : ViewModel() {
     }
 
     fun getUpdatedAnniversaryRecord(): ArrayList<RecordUIModel> {
-        val dataList = repository.populateData()
+        val dataList = anniversaryDateRecordRepository.populateData()
         dataList.forEach {
             getAnniversaryEventRecord(it)
         }

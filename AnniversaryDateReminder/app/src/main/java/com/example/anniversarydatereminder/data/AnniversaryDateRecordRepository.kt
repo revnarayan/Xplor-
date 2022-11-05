@@ -3,7 +3,7 @@ package com.example.anniversarydatereminder.data
 import com.example.anniversarydatereminder.data.model.Record
 
 
-class Repository {
+class AnniversaryDateRecordRepository {
     fun populateData(): List<Record> {
         return listOf(
             Record("1", "2013-01-10"),

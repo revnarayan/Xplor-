@@ -1,9 +1,11 @@
 package com.example.anniversarydatereminder.data
 
 import com.example.anniversarydatereminder.data.model.Record
+import javax.inject.Inject
+import javax.inject.Singleton
 
-
-class AnniversaryDateRecordRepository {
+@Singleton
+class AnniversaryDateRecordRepository @Inject constructor(){
     fun populateData(): List<Record> {
         return listOf(
             Record("1", "2013-01-10"),

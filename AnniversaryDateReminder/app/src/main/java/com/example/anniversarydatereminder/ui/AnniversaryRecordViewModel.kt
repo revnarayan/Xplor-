@@ -6,12 +6,13 @@ import com.example.anniversarydatereminder.common.Constants
 import com.example.anniversarydatereminder.data.AnniversaryDateRecordRepository
 import com.example.anniversarydatereminder.data.model.Record
 import com.example.anniversarydatereminder.data.model.RecordUIModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
 
-
-class AnniversaryRecordViewModel() : ViewModel() {
-    private val anniversaryDateRecordRepository = AnniversaryDateRecordRepository()
+@HiltViewModel
+class AnniversaryRecordViewModel @Inject constructor(private val anniversaryDateRecordRepository: AnniversaryDateRecordRepository) : ViewModel() {
     private val upcomingAnniversaries: ArrayList<RecordUIModel> = arrayListOf()
 
     private fun getAnniversaryEventRecord(record: Record) {

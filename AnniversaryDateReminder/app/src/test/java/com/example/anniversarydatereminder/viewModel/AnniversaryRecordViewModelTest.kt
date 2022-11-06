@@ -15,7 +15,7 @@ import org.junit.Test
 class AnniversaryRecordViewModelTest {
 
     private val anniversaryDateRecordRepositoryMock = mockk<AnniversaryDateRecordRepository>()
-    private val viewModel = AnniversaryRecordViewModel()
+    private val viewModel = AnniversaryRecordViewModel(anniversaryDateRecordRepositoryMock)
 
 
     @Before

@@ -6,6 +6,7 @@ This Android app is a reminder app for couples whose anniversary dates falls in 
 •	Kotlin
 •	Data Binding
 •	ViewModel
+•	Hilt
 •	Espresso
 •	Mockito and Junit Framework for Unit Test
 
